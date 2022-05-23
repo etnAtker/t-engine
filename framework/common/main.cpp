@@ -5,7 +5,7 @@ using namespace TEngine;
 
 namespace TEngine
 {
-    extern IApplication* g_p_app;
+    extern IApplication *g_p_app;
 }
 
 int main()

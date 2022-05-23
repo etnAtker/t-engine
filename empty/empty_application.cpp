@@ -3,5 +3,5 @@
 namespace TEngine
 {
     BaseApplication g_app;
-    IApplication* g_p_app = &g_app;
+    IApplication *g_p_app = &g_app;
 }
