@@ -9,11 +9,9 @@ namespace TEngine
     {
     public:
         int initialize() override = 0;
-
         void finalize() override = 0;
 
         void tick() override = 0;
-
         virtual bool is_quit() = 0;
     };
 }
