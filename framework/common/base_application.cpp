@@ -7,7 +7,7 @@ int TEngine::BaseApplication::initialize()
     return 0;
 }
 
-// Finalize all sub modules and clean up all runtime temporary files.
+// Finalize all submodules and clean up all runtime temporary files.
 void TEngine::BaseApplication::finalize()
 {
 }

@@ -4,17 +4,16 @@
 
 namespace TEngine
 {
-    class BaseApplication: impl IApplication
+    class BaseApplication : impl IApplication
     {
-        public:
-        virtual int initialize();
-        virtual void finalize();
+    public:
+        int initialize() override;
+        void finalize() override;
 
-        virtual void tick();
+        void tick() override;
+        bool is_quit() override;
 
-        virtual bool is_quit();
-
-        protected:
-        bool m_b_quit;
+    protected:
+        bool m_b_quit{};
     };
 }
