@@ -1,5 +1,4 @@
 #include <Windows.h>
-// #include <windowsx.h>
 #include <tchar.h>
 
 // the WindowProc function prototype
@@ -72,22 +71,31 @@ int WINAPI WinMain(HINSTANCE hInstance,
 // this is the main message handler for the program
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-//    // sort through and find what code to run for the messaggit e given
-//    switch (message) {
-//        // this message is read when the window is closed
-//        case WM_DESTROY: {
-//            // close the application entirely
-//            PostQuitMessage(0);
-//            return 0;
-//        }
-//            break;
-//    }
+    // sort through and find what code to run for the messaggit e given
+    switch (message) {
+        case WM_PAINT: {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
+            RECT rec = {20, 20, 60, 80};
+            HBRUSH brush = (HBRUSH) GetStockObject(BLACK_BRUSH);
 
-    // this message is read when the window is closed
-    if (message == WM_DESTROY) {
-        // close the application entirely
-        PostQuitMessage(0);
-        return 0;
+            FillRect(hdc, &rec, brush);
+
+            EndPaint(hWnd, &ps);
+
+            break;
+        }
+
+        // this message is read when the window is closed
+        case WM_DESTROY: {
+            // close the application entirely
+            PostQuitMessage(0);
+            return 0;
+        }
+
+        default: {
+            break;
+        }
     }
 
     // Handle any messages the switch statement didn't
